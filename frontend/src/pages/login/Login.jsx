@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from "react-dom";
+import SignUp from '../signup/SignUp';
 
 
 const handleSubmit = () =>{
@@ -45,9 +46,9 @@ const Login = () => {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
-					{/* <Link to='/signup' className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
+					<a href='/SignUp' className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
 						{"Don't"} have an account?
-					</Link> */}
+					</a>
 
 					<div>
 						<button className='btn btn-block btn-sm mt-2' disabled={loading}>
