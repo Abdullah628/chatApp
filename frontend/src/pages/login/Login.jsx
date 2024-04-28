@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import SignUp from '../signup/SignUp';
+import useLogin from '../../hooks/useLogin';
 
 
-const handleSubmit = () =>{
-    console.log("submiting function");
-}
 const Login = () => {
 
-    const username = "Rafi";
-    const password = "123456";
-    const loading = false;
+    const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+    
+	const {loading, login} = useLogin();
+
+	const handleSubmit = async (e) =>{
+		e.preventDefault();
+		await login(username, password);
+	}
+
 
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
