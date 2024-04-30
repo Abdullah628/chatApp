@@ -54,13 +54,14 @@ export const getMessages = async(req, res) =>{
         }).populate("message");
 
         if(!conversation) return res.status(200).json([]);
-
-        const messages = conversation.messages;
+        
+        const messages = conversation.message;
+        
         res.status(200).json(messages);
 
 
     }catch(error){
         console.log("Error in sendMessage controller: ", error.message);
-        res.status(500).json({error: "Internal server error"});
+        res.status(500).json({error: "Internal server errorx"});
     }
 }
