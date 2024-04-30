@@ -9,9 +9,6 @@ const Messages = () => {
 //   useListenMessages();
   const lastMessageRef = useRef();
 
-  
-
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,8 +24,6 @@ const Messages = () => {
             <div key={message?._id} ref={lastMessageRef} >
               <Message message={message} />
             </div>
-            
-          
         ))}
 
       {loading && [...Array(3)]?.map((_, idx) => <MessageSkeleton key={idx} />)}
